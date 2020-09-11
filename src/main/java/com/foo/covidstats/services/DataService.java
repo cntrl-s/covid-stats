@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.foo.covidstats.util.JsonUtil;
 
-public class StateWiseDataService {
+public class DataService {
 	private String apiUrl = "https://api.covid19india.org/data.json";
 	private ArrayList<States> stateWiseStats = new ArrayList<>();
 	private ArrayList<DailyStats> dailyStats = new ArrayList<>();

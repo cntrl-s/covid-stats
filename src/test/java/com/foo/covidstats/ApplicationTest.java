@@ -7,12 +7,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.foo.covidstats.services.DailyStats;
-import com.foo.covidstats.services.StateWiseDataService;
+import com.foo.covidstats.services.DataService;
 import com.foo.covidstats.services.States;
 
 public class ApplicationTest {
 
-	private StateWiseDataService app;
+	private DataService app;
 
 	public static void printStatewiseData(List<States> allStates) {
 		for (States states : allStates) {
@@ -22,7 +22,7 @@ public class ApplicationTest {
 	
 	@Before
 	public void init() {
-		app = new StateWiseDataService();
+		app = new DataService();
 	}
 	
 	@Test
