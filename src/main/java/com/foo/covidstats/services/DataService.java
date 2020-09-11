@@ -31,7 +31,6 @@ public class DataService {
 //			state.setActive(jsonNode.get("active").asInt());
 			States state = JsonUtil.MAPPER.readValue(jsonNode.traverse(), States.class);
 			this.stateWiseStats.add(state);
-			
 		}
 
 		for (JsonNode jsonNode : dailyData) {

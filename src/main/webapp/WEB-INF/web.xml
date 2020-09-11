@@ -7,11 +7,10 @@
   <servlet>
   	<servlet-name>DataController</servlet-name>
   	<display-name>DataController</display-name>
-  	<description></description>
   	<servlet-class>com.foo.covidstats.controllers.DataController</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>DataController</servlet-name>
-  	<url-pattern>/DataController</url-pattern>
+  	<url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>
