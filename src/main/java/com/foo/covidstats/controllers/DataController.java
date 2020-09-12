@@ -1,6 +1,11 @@
 package com.foo.covidstats.controllers;
 
 import java.io.IOException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +20,21 @@ public class DataController extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		DataService dataService = new DataService();
-		dataService.fetchData();
+		final ScheduledExecutorService updateShcedule =
+				Executors.newScheduledThreadPool(1);
+		
+		final Runnable updateTask = () -> {
+			try {
+				dataService.fetchData();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		};
+		
+		final ScheduledFuture<?> updateHandle =
+				updateShcedule.scheduleWithFixedDelay(updateTask, 0, 5, TimeUnit.SECONDS);
+		
+		updateShcedule.schedule((Runnable) updateHandle, 0, TimeUnit.SECONDS);
 		
 	}
 
