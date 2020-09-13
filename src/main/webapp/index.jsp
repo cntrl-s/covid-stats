@@ -8,9 +8,31 @@
 </head>
 
 <div class="w3-container">
-	<h1>Covid-19 Statistics</h1>
-	<p>This application lists the current number of cases reported</p>
+	<h1>Covid-19 India Statistics</h1>
 </div>
+
+<jsp:useBean id="dailyStats" class="com.foo.covidstats.services.DailyStats" scope="request"> 
+</jsp:useBean>
+
+<div id="maincounter-wrap" style="margin-top: 15px">
+	<h3>Coronavirus Cases:</h3>
+	<div class="maincounter-number">
+		<span style="color: #aaa">${dailyStats.totalConfirmed}</span>
+	</div>
+</div>
+<div id="maincounter-wrap" style="margin-top: 15px">
+	<h3>Deaths:</h3>
+	<div class="maincounter-number">
+		<span>${dailyStats.totalDeceased}</span>
+	</div>
+</div>
+<div id="maincounter-wrap" style="margin-top: 15px;">
+	<h3>Recovered:</h3>
+	<div class="maincounter-number" style="color: #8ACA2B">
+		<span>${dailyStats.totalRecovered}</span>
+	</div>
+</div>
+
 <body>
 	<div>
 		<table class="w3-table-all">

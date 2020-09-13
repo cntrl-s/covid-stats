@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.foo.covidstats.util.JsonUtil;
 
 public class DataService {
-	private String apiUrl = "https://api.covid19india.org/data.json";
+	private final String apiUrl = "https://api.covid19india.org/data.json";
 	private ArrayList<States> stateWiseStats = new ArrayList<>();
 	private ArrayList<DailyStats> dailyStats = new ArrayList<>();
 
@@ -20,7 +20,7 @@ public class DataService {
 	}
 
 	public void fetchData() throws IOException {
-		String payload = JsonUtil.getDataFromApi(apiUrl);
+		String payload = JsonUtil.getDataFromApi(this.apiUrl);
 		JsonNode data = JsonUtil.MAPPER.readTree(payload);
 
 		JsonNode statewiseData = data.get("statewise");

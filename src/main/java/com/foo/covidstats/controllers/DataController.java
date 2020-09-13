@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.foo.covidstats.services.DailyStats;
 import com.foo.covidstats.services.DataService;
 import com.foo.covidstats.services.States;
 
@@ -18,8 +19,11 @@ public class DataController extends HttpServlet {
 		DataService dataService = new DataService();
 		
 		dataService.fetchData();
+		List<DailyStats> dailyStatsList = dataService.getDailyStats();
 		List<States> stateWiseStats = dataService.getStateWiseList();
+		DailyStats dailyStats = dailyStatsList.get(dailyStatsList.size() - 1);
 
+		request.setAttribute("dailyStats", dailyStats);
 		request.setAttribute("stateWiseStats", stateWiseStats);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		return;
