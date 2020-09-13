@@ -17,6 +17,7 @@ public class DailyStats {
 	private int totalDeceased;
 	@JsonProperty("totalrecovered")
 	private int totalRecovered;
+
 	public int getDailyConfirmed() {
 		return dailyConfirmed;
 	}
