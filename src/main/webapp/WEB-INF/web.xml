@@ -7,6 +7,6 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>DataController</servlet-name>
-  	<url-pattern>/stats</url-pattern>
+  	<url-pattern></url-pattern>
   </servlet-mapping>
 </web-app>
