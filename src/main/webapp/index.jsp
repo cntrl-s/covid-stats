@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 
 <head>
@@ -44,6 +45,7 @@
 					<th>Confirmed</th>
 					<th>Deaths</th>
 					<th>Recovered</th>
+					<th>Last Update</th>
 				</tr>
 			</thead>
 
@@ -55,6 +57,7 @@
 					<td>${state.confirmed}</td>
 					<td>${state.deaths}</td>
 					<td>${state.recovered}</td>
+					<td>${state.lastUpdatedTime}</td>
 				</tr>
 			</c:forEach>
 		</table>
