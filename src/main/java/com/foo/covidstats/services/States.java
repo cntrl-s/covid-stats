@@ -4,22 +4,33 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class States {
 	private int active;
+
 	private int confirmed;
+
 	private int deaths;
+
 	@JsonProperty("deltaconfirmed")
 	private int deltaConfirmed;
+
 	@JsonProperty("deltadeaths")
 	private int deltaDeaths;
+
 	@JsonProperty("deltarecovered")
 	private int deltaRecovered;
+
 	@JsonProperty("lastupdatedtime")
 	private String lastUpdatedTime;
+
 	@JsonProperty("migratedother")
 	private int migratedOther;
+
 	private int recovered;
+
 	private String state;
+
 	@JsonProperty("statecode")
 	private String stateCode;
+
 	@JsonProperty("statenotes")
 	private String stateNotes;
 
@@ -59,10 +70,10 @@ public class States {
 	public void setDeltaRecovered(int deltaRecovered) {
 		this.deltaRecovered = deltaRecovered;
 	}
-	public String getLastUpdateTime() {
+	public String getLastUpdatedTime() {
 		return lastUpdatedTime;
 	}
-	public void setLastUpdateTime(String lastUpdatedTime) {
+	public void setLastUpdatedTime(String lastUpdatedTime) {
 		this.lastUpdatedTime = lastUpdatedTime;
 	}
 	public int getMigratedOther() {
