@@ -2,20 +2,21 @@ package com.foo.covidstats.services;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.foo.covidstats.util.JsonUtil;
 
 public class DataService {
 	private final String apiUrl = "https://api.covid19india.org/data.json";
-	private ArrayList<States> stateWiseStats = new ArrayList<>();
-	private ArrayList<DailyStats> dailyStats = new ArrayList<>();
+	private List<States> stateWiseStats = new ArrayList<>();
+	private List<DailyStats> dailyStats = new ArrayList<>();
 
-	public ArrayList<States> getStateWiseList() {
+	public List<States> getStateWiseList() {
 		return this.stateWiseStats;
 	}
 	
-	public ArrayList<DailyStats> getDailyStats() {
+	public List<DailyStats> getDailyStats() {
 		return this.dailyStats;
 	}
 
@@ -27,8 +28,6 @@ public class DataService {
 		JsonNode dailyData = data.get("cases_time_series");
 		
 		for (JsonNode jsonNode : statewiseData) {
-//			States state = new States();
-//			state.setActive(jsonNode.get("active").asInt());
 			States state = JsonUtil.MAPPER.readValue(jsonNode.traverse(), States.class);
 			this.stateWiseStats.add(state);
 		}
