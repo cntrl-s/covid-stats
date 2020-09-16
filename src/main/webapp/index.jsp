@@ -1,37 +1,44 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <html>
 
 <head>
 <title>Coronavirus Tracker</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="side.css">
 </head>
 
 <div class="w3-container">
 	<h1>Covid-19 India Statistics</h1>
 </div>
 
-<jsp:useBean id="dailyStats" class="com.foo.covidstats.services.DailyStats" scope="request"> 
+<jsp:useBean id="dailyStats"
+	class="com.foo.covidstats.services.DailyStats" scope="request">
 </jsp:useBean>
 
-<div id="maincounter-wrap" style="margin-top: 15px">
-	<h3>Coronavirus Cases:</h3>
-	<div class="maincounter-number">
-		<span style="color: #aaa">${dailyStats.totalConfirmed}</span>
-	</div>
+<p>${dailyStats.date}</p>
+
+<div id="row1" style="margin-top: 15px">
+	<div id="column1">Total Cases</div>
+	<span style="color: #aaa">${dailyStats.totalConfirmed}</span>
+	<div id="column2">Daily Reported</div>
+	<span>${dailyStats.dailyConfirmed}</span>
 </div>
-<div id="maincounter-wrap" style="margin-top: 15px">
-	<h3>Deaths:</h3>
-	<div class="maincounter-number">
-		<span>${dailyStats.totalDeceased}</span>
-	</div>
+
+<div id="row1" style="margin-top: 15px">
+	<div id="column1">Total Deaths</div>
+	<span style="color: #aaa">${dailyStats.totalDeceased}</span>
+	<div id="column2">Daily Deaths</div>
+	<span>${dailyStats.dailyDeceased}</span>
 </div>
-<div id="maincounter-wrap" style="margin-top: 15px;">
-	<h3>Recovered:</h3>
-	<div class="maincounter-number" style="color: #8ACA2B">
-		<span>${dailyStats.totalRecovered}</span>
-	</div>
+
+<div id="row1" style="margin-top: 15px">
+	<div id="column1">Total Recovered</div>
+	<span style="color: #aaa">${dailyStats.totalRecovered}</span>
+	<div id="column2">Daily Recovered</div>
+	<span>${dailyStats.dailyRecovered}</span>
 </div>
 
 <body>
