@@ -20,29 +20,20 @@
 
 <p>${dailyStats.date}</p>
 
-<div id="row1">
-	<div id="column1">Total Cases</div>
-	<span>${dailyStats.totalConfirmed}</span>
-	<div id="column2">Daily Reported</div>
-	<span>${dailyStats.dailyConfirmed}</span>
+<div id="card1">
+	<div>Total Cases : ${dailyStats.totalConfirmed}</div>
+	<div>Total Recovered : ${dailyStats.totalRecovered}</div>
+	<div>Total Deaths : ${dailyStats.totalDeceased}</div>
 </div>
 
-<div id="row1">
-	<div id="column1">Total Deaths</div>
-	<span>${dailyStats.totalDeceased}</span>
-	<div id="column2">Daily Deaths</div>
-	<span>${dailyStats.dailyDeceased}</span>
-</div>
-
-<div id="row1">
-	<div id="column1">Total Recovered</div>
-	<span>${dailyStats.totalRecovered}</span>
-	<div id="column2">Daily Recovered</div>
-	<span>${dailyStats.dailyRecovered}</span>
+<div id="card2">
+	<div>Daily Reported : ${dailyStats.dailyConfirmed}</div>
+	<div>Daily Deaths : ${dailyStats.dailyDeceased}</div>
+	<div>Daily Recovered : ${dailyStats.dailyRecovered}</div>
 </div>
 
 <body>
-	<div>
+	<div class="table">
 		<table>
 			<thead>
 				<tr>
