@@ -7,10 +7,10 @@
 <title>Coronavirus Tracker</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="side.css">
+<link rel="stylesheet" href="style1.css">
 </head>
 
-<div class="w3-container">
+<div>
 	<h1>Covid-19 India Statistics</h1>
 </div>
 
@@ -20,32 +20,32 @@
 
 <p>${dailyStats.date}</p>
 
-<div id="row1" style="margin-top: 15px">
+<div id="row1">
 	<div id="column1">Total Cases</div>
-	<span style="color: #aaa">${dailyStats.totalConfirmed}</span>
+	<span>${dailyStats.totalConfirmed}</span>
 	<div id="column2">Daily Reported</div>
 	<span>${dailyStats.dailyConfirmed}</span>
 </div>
 
-<div id="row1" style="margin-top: 15px">
+<div id="row1">
 	<div id="column1">Total Deaths</div>
-	<span style="color: #aaa">${dailyStats.totalDeceased}</span>
+	<span>${dailyStats.totalDeceased}</span>
 	<div id="column2">Daily Deaths</div>
 	<span>${dailyStats.dailyDeceased}</span>
 </div>
 
-<div id="row1" style="margin-top: 15px">
+<div id="row1">
 	<div id="column1">Total Recovered</div>
-	<span style="color: #aaa">${dailyStats.totalRecovered}</span>
+	<span>${dailyStats.totalRecovered}</span>
 	<div id="column2">Daily Recovered</div>
 	<span>${dailyStats.dailyRecovered}</span>
 </div>
 
 <body>
 	<div>
-		<table class="w3-table-all">
+		<table>
 			<thead>
-				<tr class="w3-green">
+				<tr>
 					<th>State</th>
 					<th>State Code</th>
 					<th>Active</th>
