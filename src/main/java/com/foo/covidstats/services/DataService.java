@@ -9,10 +9,10 @@ import com.foo.covidstats.util.JsonUtil;
 
 public class DataService {
 	private final String apiUrl = "https://api.covid19india.org/data.json";
-	private List<States> stateWiseStats = new ArrayList<>();
+	private List<State> stateWiseStats = new ArrayList<>();
 	private List<DailyStats> dailyStats = new ArrayList<>();
 
-	public List<States> getStateWiseList() {
+	public List<State> getStateWiseList() {
 		return this.stateWiseStats;
 	}
 	
@@ -28,7 +28,7 @@ public class DataService {
 		JsonNode dailyData = data.get("cases_time_series");
 		
 		for (JsonNode jsonNode : statewiseData) {
-			States state = JsonUtil.MAPPER.readValue(jsonNode.traverse(), States.class);
+			State state = JsonUtil.MAPPER.readValue(jsonNode.traverse(), State.class);
 			this.stateWiseStats.add(state);
 		}
 

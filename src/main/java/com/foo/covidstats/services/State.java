@@ -2,7 +2,7 @@ package com.foo.covidstats.services;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class States {
+public class State {
 	private int active;
 
 	private int confirmed;

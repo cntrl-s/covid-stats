@@ -8,14 +8,14 @@ import org.junit.Test;
 
 import com.foo.covidstats.services.DailyStats;
 import com.foo.covidstats.services.DataService;
-import com.foo.covidstats.services.States;
+import com.foo.covidstats.services.State;
 
 public class ApplicationTest {
 
 	private DataService app;
 
-	public static void printStatewiseData(List<States> allStates) {
-		for (States states : allStates) {
+	public static void printStatewiseData(List<State> allStates) {
+		for (State states : allStates) {
 			System.out.println(states + "\n");
 		}
 	}
@@ -33,7 +33,7 @@ public class ApplicationTest {
 			e.printStackTrace();
 		}
 
-		List<States> allStates = app.getStateWiseList();
+		List<State> allStates = app.getStateWiseList();
 		System.out.println(allStates.get(0));//latest allStates
 		
 		List<DailyStats> dailyStats = app.getDailyStats();

@@ -34,7 +34,7 @@
 
 <body>
 	<div class="table">
-		<table>
+		<table class="sortable">
 			<thead>
 				<tr>
 					<th>State</th>

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.foo.covidstats.services.DailyStats;
 import com.foo.covidstats.services.DataService;
-import com.foo.covidstats.services.States;
+import com.foo.covidstats.services.State;
 
 public class DataController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -20,7 +20,7 @@ public class DataController extends HttpServlet {
 		
 		dataService.fetchData();
 		List<DailyStats> dailyStatsList = dataService.getDailyStats();
-		List<States> stateWiseStats = dataService.getStateWiseList();
+		List<State> stateWiseStats = dataService.getStateWiseList();
 		DailyStats dailyStats = dailyStatsList.get(dailyStatsList.size() - 1);
 
 		request.setAttribute("dailyStats", dailyStats);
