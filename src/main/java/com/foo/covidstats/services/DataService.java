@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.foo.covidstats.util.JsonUtil;
 
@@ -27,14 +28,11 @@ public class DataService {
 		JsonNode statewiseData = data.get("statewise");
 		JsonNode dailyData = data.get("cases_time_series");
 		
-		for (JsonNode jsonNode : statewiseData) {
-			State state = JsonUtil.MAPPER.readValue(jsonNode.traverse(), State.class);
-			this.stateWiseStats.add(state);
-		}
+		
+		this.stateWiseStats = JsonUtil.MAPPER.
+				convertValue(statewiseData, new TypeReference<List<State>>(){});
 
-		for (JsonNode jsonNode : dailyData) {
-			DailyStats daily = JsonUtil.MAPPER.readValue(jsonNode.traverse(), DailyStats.class);
-			this.dailyStats.add(daily);
-		}
+		this.dailyStats = JsonUtil.MAPPER.
+				convertValue(dailyData, new TypeReference<List<DailyStats>>() {});
 	}
 }
